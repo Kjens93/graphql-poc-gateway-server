@@ -1,0 +1,41 @@
+type Customer {
+    id: ID! @unique
+    name: String!
+    address: CustomerAddress!
+    phone: String!
+    orders: [Order!]!
+}
+
+type CustomerAddress {
+    id: ID! @unique
+    customer: Customer!
+    line1: String!
+    line2: String
+    city: String!
+    state: String!
+    postalCode: String!
+    country: String!
+}
+
+type Order {
+    id: ID! @unique
+    placedDate: DateTime!
+    startedDate: DateTime
+    outForDeliveryDate: DateTime
+    deliveredDate: DateTime
+    customer: Customer!
+    pizzas: [Pizza!]!
+    deliveryInstructions: String
+}
+
+type Pizza {
+    id: ID! @unique
+    toppings: [Topping!]!
+}
+
+enum Topping {
+    CHEESE,
+    PEPPERONI,
+    OLIVES,
+    GREEN_PEPPERS
+}

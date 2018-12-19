@@ -1,0 +1,3 @@
+endpoint: https://${env:SERVER_HOST}/${env:SERVICE_NAME}/${env:STAGE_NAME}
+datamodel: 
+  - datamodel/${env:SERVICE_NAME}.prisma

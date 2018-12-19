@@ -1,0 +1,6 @@
+type Unit {
+    id: ID! @unique
+    name: String! @unique
+    parent: Unit @relation(name: "UnitOneToManyRelation")
+    children: [Unit!]! @relation(name: "UnitOneToManyRelation")
+}
